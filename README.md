@@ -1,3 +1,29 @@
+## Install
+
+## laravel-echo-server
+<p>npm install -g laravel-echo-server</p>
+<p>laravel-echo-server init</p>
+<p>laravel-echo-server start</p>
+config/app
+ App\Providers\BroadcastServiceProvider::class,
+ 
+npm i
+npm i --save laravel-echo
+      "socket.io-client": "^2.3.0"
+      
+## bootStrap.js
+import Echo from 'laravel-echo';
+
+window.io = require('socket.io-client')
+
+window.Echo = new Echo({
+    broadcaster: 'socket.io',
+    host: windows.location.hostname + ':6001'
+})
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
