@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/create-post', function () {
+   $user = \App\Models\User::first();
+
+   $post = $user->posts()->create([
+       'title' => Str::random(100),
+       'body' => Str::random(400)
+   ]);
+
+   //event(new \App\Events\PostCreated($post));
+
+   return 'ok';
 });
+
+Route::get('/', [SiteController::class, 'index']);
